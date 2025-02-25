@@ -7,11 +7,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"  , 
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview" , 
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build" 
+    "preview": "vite preview" 
+    
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.2",
