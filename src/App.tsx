@@ -124,7 +124,13 @@ function PricingSection() {
     </div>
   );
 }
-const FAQItem = ({ question, answer }) => (
+const FAQItem = ({
+  question,
+  answer,
+}: {
+  question: string;
+  answer: string;
+}) => (
   <Card className="shadow-md">
     <CardContent className="p-4">
       <h3 className="font-semibold">{question}</h3>
