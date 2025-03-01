@@ -6,7 +6,7 @@ import TermsOfService from "./screens/terms_of_service";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/tabflow">
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
