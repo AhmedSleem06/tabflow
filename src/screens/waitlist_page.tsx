@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Logo } from "./landing_page";
 import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
 import { Loader2, LogIn } from "lucide-react";
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import * as EmailValidator from "email-validator";
 
