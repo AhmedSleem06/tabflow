@@ -2,7 +2,7 @@ import { ReactNode, useEffect, useState } from "react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { Linkedin, Mail, MenuIcon, Twitter, X } from "lucide-react";
-import { NavLink, useLocation } from "react-router";
+import { NavLink, useLocation, useNavigate } from "react-router";
 
 function LandingPage() {
   const [isDrawerOpen, setDrawerState] = useState(false);
@@ -154,7 +154,10 @@ function PricingCardBasicPlan() {
       </section>
       <Button
         onClick={() => {
-          window.location.href = "https://9603692170315a.gumroad.com/l/aiovez";
+          window.open(
+            "https://9603692170315a.gumroad.com/l/aiovez?option=T82tQ1UYx12yCV804Feo8A%3D%3D&_gl=1*ustpzv*_ga*MTcyNzA0NTMuMTczODc3MzQ5Ng..*_ga_6LJN6D94N6*MTc0MTM3MzA1Ni4zNi4xLjE3NDEzNzc5MjUuMC4wLjA.&wanted=true",
+            "_blank"
+          );
         }}
         size={"lg"}
         className="rounded-full cursor-pointer mt-6"
@@ -216,7 +219,10 @@ function PricingCardAdvancedPlan() {
       </section>
       <Button
         onClick={() => {
-          window.location.href = "https://9603692170315a.gumroad.com/l/aiovez";
+          window.open(
+            "https://9603692170315a.gumroad.com/l/aiovez?option=kPB3YrSbQvyTgOsDZnKtew%3D%3D&_gl=1*1wixtr5*_ga*MTcyNzA0NTMuMTczODc3MzQ5Ng..*_ga_6LJN6D94N6*MTc0MTM3MzA1Ni4zNi4xLjE3NDEzNzc4OTYuMC4wLjA.&wanted=true",
+            "_blank"
+          );
         }}
         size={"lg"}
         className="rounded-full cursor-pointer mt-6"
@@ -260,7 +266,7 @@ const FAQItem = ({
 
 const CountdownTimer = () => {
   const calculateTimeLeft = () => {
-    const difference = +new Date(`2025-03-06T00:00:00`) - +new Date();
+    const difference = +new Date(`2025-03-08T00:00:00`) - +new Date();
     let timeLeft = {
       days: 0,
       hours: 0,
@@ -427,7 +433,7 @@ const Footer = () => (
         <h4 className="font-bold text-gray-600">Contact</h4>
         <p className="text-sm mt-2 space-y-2 flex items-center text-gray-800 ">
           <Mail className="w-4 h-4 mr-2" />
-          ahmed.sleem2020@gmail.com
+          ahmed.sleem1206@gmail.com
         </p>
         <div className="flex space-x-3 mt-4 text-gray-800">
           <a
@@ -774,6 +780,7 @@ function FeatureComponent({
 }
 
 function Hero() {
+  const navigate = useNavigate();
   return (
     <>
       <div className="container   flex-col lg:flex-row lg:h-fit h-screen   mx-auto justify-center lg:justify-between items-center  flex   ">
@@ -800,13 +807,13 @@ function Hero() {
             </Button>
             <Button
               onClick={() => {
-                window.location.href = "#problems";
+                navigate("/waitlist");
               }}
               size={"xl"}
               variant="outline"
               className="rounded-full cursor-pointer"
             >
-              Learn More
+              Join Waitlist
             </Button>
           </div>
         </section>
@@ -894,7 +901,7 @@ function NavLinks() {
   );
 }
 
-function Logo() {
+export function Logo() {
   return (
     <a href="/" className="flex cursor-pointer w-fit items-center  gap-1 ">
       <img src="./icon.png" alt="Logo" className="lg:w-11 w-9 h-9 lg:h-11" />

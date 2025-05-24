@@ -3,6 +3,7 @@ import LandingPage from "./screens/landing_page";
 import PrivacyPolicy from "./screens/privacy_policy";
 import RefundPolicy from "./screens/refund_policy";
 import TermsOfService from "./screens/terms_of_service";
+import WaitListPage from "./screens/waitlist_page";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/refund-policy" element={<RefundPolicy />} />
         <Route path="/termsofs" element={<TermsOfService />} />
+        <Route path="/waitlist" element={<WaitListPage />} />
       </Routes>
     </BrowserRouter>
   );
