@@ -281,61 +281,61 @@ const FAQItem = ({
   </Card>
 );
 
-const CountdownTimer = () => {
-  const calculateTimeLeft = () => {
-    const difference = +new Date(`2025-03-08T00:00:00`) - +new Date();
-    let timeLeft = {
-      days: 0,
-      hours: 0,
-      minutes: 0,
-      seconds: 0,
-    };
+// const CountdownTimer = () => {
+//   const calculateTimeLeft = () => {
+//     const difference = +new Date(`2025-03-08T00:00:00`) - +new Date();
+//     let timeLeft = {
+//       days: 0,
+//       hours: 0,
+//       minutes: 0,
+//       seconds: 0,
+//     };
 
-    if (difference > 0) {
-      timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
-      };
-    }
+//     if (difference > 0) {
+//       timeLeft = {
+//         days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+//         hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+//         minutes: Math.floor((difference / 1000 / 60) % 60),
+//         seconds: Math.floor((difference / 1000) % 60),
+//       };
+//     }
 
-    return timeLeft;
-  };
+//     return timeLeft;
+//   };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+//   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
+//   useEffect(() => {
+//     const timer = setTimeout(() => {
+//       setTimeLeft(calculateTimeLeft());
+//     }, 1000);
 
-    return () => clearTimeout(timer);
-  });
+//     return () => clearTimeout(timer);
+//   });
 
-  const { days, hours, minutes, seconds } = timeLeft;
+//   const { days, hours, minutes, seconds } = timeLeft;
 
-  return (
-    <div className="flex space-x-4 text-xl font-semibold items-center justify-center">
-      <div className="w-fit bg-white py-2 text-sm lg:text-base px-4 text-green-600 rounded-lg">
-        {String(days).padStart(2, "0")}{" "}
-        <span className="text-xs lg:text-sm text-black">days</span>
-      </div>
-      <div className="w-fit bg-white py-2 px-4 text-sm lg:text-base text-green-600 rounded-lg">
-        {String(hours).padStart(2, "0")}{" "}
-        <span className=" text-xs lg:text-sm text-black">hours</span>
-      </div>
-      <div className="w-fit bg-white py-2 px-4 text-sm lg:text-base  text-green-600 rounded-lg">
-        {String(minutes).padStart(2, "0")}{" "}
-        <span className="text-xs lg:text-sm text-black">minutes</span>
-      </div>
-      <div className="w-fit bg-white py-2 px-4 text-sm lg:text-base text-green-600 rounded-lg">
-        {String(seconds).padStart(2, "0")}{" "}
-        <span className="text-xs lg:text-sm text-black">seconds</span>
-      </div>
-    </div>
-  );
-};
+//   return (
+//     <div className="flex space-x-4 text-xl font-semibold items-center justify-center">
+//       <div className="w-fit bg-white py-2 text-sm lg:text-base px-4 text-green-600 rounded-lg">
+//         {String(days).padStart(2, "0")}{" "}
+//         <span className="text-xs lg:text-sm text-black">days</span>
+//       </div>
+//       <div className="w-fit bg-white py-2 px-4 text-sm lg:text-base text-green-600 rounded-lg">
+//         {String(hours).padStart(2, "0")}{" "}
+//         <span className=" text-xs lg:text-sm text-black">hours</span>
+//       </div>
+//       <div className="w-fit bg-white py-2 px-4 text-sm lg:text-base  text-green-600 rounded-lg">
+//         {String(minutes).padStart(2, "0")}{" "}
+//         <span className="text-xs lg:text-sm text-black">minutes</span>
+//       </div>
+//       <div className="w-fit bg-white py-2 px-4 text-sm lg:text-base text-green-600 rounded-lg">
+//         {String(seconds).padStart(2, "0")}{" "}
+//         <span className="text-xs lg:text-sm text-black">seconds</span>
+//       </div>
+//     </div>
+//   );
+// };
 
 function FAQSection() {
   const faqs = [
@@ -370,7 +370,7 @@ function FAQSection() {
           <FAQItem key={index} {...faq} />
         ))}
       </div>
-      <div className="w-full bg-green-600 text-white text-center py-14  mt-10">
+      {/* <div className="w-full bg-green-600 text-white text-center py-14  mt-10">
         <h3 className="text-2xl lg:text-3xl font-bold">
           Grab Your Early-Bird Offer Before the Price Increases!
         </h3>
@@ -389,7 +389,7 @@ function FAQSection() {
         >
           Pre-Order TabFlow Now
         </Button>
-      </div>
+      </div> */}
     </div>
   );
 }
