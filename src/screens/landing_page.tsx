@@ -1,8 +1,9 @@
 import { ReactNode, useEffect, useState } from "react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
-import { Linkedin, Mail, MenuIcon, Twitter, X } from "lucide-react";
+import { Gift, Linkedin, Mail, MenuIcon, Twitter, X } from "lucide-react";
 import { NavLink, useLocation, useNavigate } from "react-router";
+import { Badge } from "../components/ui/badge";
 
 function LandingPage() {
   const [isDrawerOpen, setDrawerState] = useState(false);
@@ -90,11 +91,11 @@ function Drawer({
       </a>
       <Button
         onClick={() => {
-          window.location.href = "https://9603692170315a.gumroad.com/l/aiovez";
+          // window.location.href = "https://9603692170315a.gumroad.com/l/aiovez";
         }}
         className=" border-none !btn-block btn-sm mt-5 h-10 cursor-pointer rounded-full"
       >
-        Pre-Order Now
+        Join Waitlist
       </Button>
     </div>
   );
@@ -120,6 +121,7 @@ function OffCanvas({
 }
 
 function PricingCardBasicPlan() {
+  const navigate = useNavigate();
   const checkIcon = (
     <svg
       fill="currentColor"
@@ -154,21 +156,23 @@ function PricingCardBasicPlan() {
       </section>
       <Button
         onClick={() => {
-          window.open(
-            "https://9603692170315a.gumroad.com/l/aiovez?option=T82tQ1UYx12yCV804Feo8A%3D%3D&_gl=1*ustpzv*_ga*MTcyNzA0NTMuMTczODc3MzQ5Ng..*_ga_6LJN6D94N6*MTc0MTM3MzA1Ni4zNi4xLjE3NDEzNzc5MjUuMC4wLjA.&wanted=true",
-            "_blank"
-          );
+          // window.open(
+          //   "https://9603692170315a.gumroad.com/l/aiovez?option=T82tQ1UYx12yCV804Feo8A%3D%3D&_gl=1*ustpzv*_ga*MTcyNzA0NTMuMTczODc3MzQ5Ng..*_ga_6LJN6D94N6*MTc0MTM3MzA1Ni4zNi4xLjE3NDEzNzc5MjUuMC4wLjA.&wanted=true",
+          //   "_blank"
+          // );
+          navigate("/waitlist");
         }}
         size={"lg"}
         className="rounded-full cursor-pointer mt-6"
       >
-        Pre-Order Now
+        Join Waitlist
       </Button>
     </div>
   );
 }
 
 function PricingCardAdvancedPlan() {
+  const navigate = useNavigate();
   const checkIcon = (
     <svg
       fill="currentColor"
@@ -180,7 +184,7 @@ function PricingCardAdvancedPlan() {
     </svg>
   );
   return (
-    <div className="flex flex-col w-[22rem] px-6 p-4 border border-green-600 rounded-xl shadow bg-white  ">
+    <div className="flex flex-col w-[22rem] px-6 p-4 border-1 shadow cursor-pointer select-none hover:shadow-lg transition-all shadow-green-400 border-green-600  rounded-xl  bg-white  ">
       <section className="flex justify-between items-center">
         <h1 className="font-bold text-lg lg:text-xl">Advanced AI Plan</h1>
         <div className="bg-green-100 text-green-600 text-xs font-semibold px-3 py-2  rounded-full">
@@ -219,15 +223,16 @@ function PricingCardAdvancedPlan() {
       </section>
       <Button
         onClick={() => {
-          window.open(
-            "https://9603692170315a.gumroad.com/l/aiovez?option=kPB3YrSbQvyTgOsDZnKtew%3D%3D&_gl=1*1wixtr5*_ga*MTcyNzA0NTMuMTczODc3MzQ5Ng..*_ga_6LJN6D94N6*MTc0MTM3MzA1Ni4zNi4xLjE3NDEzNzc4OTYuMC4wLjA.&wanted=true",
-            "_blank"
-          );
+          // window.open(
+          //   "https://9603692170315a.gumroad.com/l/aiovez?option=kPB3YrSbQvyTgOsDZnKtew%3D%3D&_gl=1*1wixtr5*_ga*MTcyNzA0NTMuMTczODc3MzQ5Ng..*_ga_6LJN6D94N6*MTc0MTM3MzA1Ni4zNi4xLjE3NDEzNzc4OTYuMC4wLjA.&wanted=true",
+          //   "_blank"
+          // );
+          navigate("/waitlist");
         }}
         size={"lg"}
         className="rounded-full cursor-pointer mt-6"
       >
-        Pre-Order Now
+        Join Waitlist
       </Button>
     </div>
   );
@@ -241,6 +246,18 @@ function PricingSection() {
         <h4 className="mt-4 text-muted-foreground text-sm lg:text-base font-medium text-center">
           One-time purchase, lifetime updates
         </h4>
+        {/* WaitList offers Component */}
+        <div className="flex mt-4 items-center justify-center gap-2">
+          <div className="w-10 h-10 border bg-primary/10 rounded-full flex items-center justify-center">
+            <Gift className="w-6 h-6 text-primary" />
+          </div>
+          <Badge
+            variant="secondary"
+            className="bg-primary/10 text-primary text-sm border-primary/20"
+          >
+            Waitlist Offers
+          </Badge>
+        </div>
         <div className="flex flex-col lg:flex-row mt-8 gap-10 items-start">
           <PricingCardBasicPlan />
           <PricingCardAdvancedPlan />
@@ -797,13 +814,14 @@ function Hero() {
           <div className="flex mt-8 gap-3">
             <Button
               onClick={() => {
-                window.location.href =
-                  "https://9603692170315a.gumroad.com/l/aiovez";
+                // window.location.href =
+                //   "https://9603692170315a.gumroad.com/l/aiovez";
+                window.location.href = "#problems";
               }}
               size={"xl"}
               className="rounded-full cursor-pointer"
             >
-              Pre-Order Now
+              Learn More
             </Button>
             <Button
               onClick={() => {
@@ -831,6 +849,7 @@ function NavBar({
 }: {
   setDrawerState: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
+  const navigate = useNavigate();
   return (
     <div className=" border-b-1 pt-4 pb-4 ">
       <div className="flex justify-between items-center  mx-6  ">
@@ -839,12 +858,14 @@ function NavBar({
 
         <Button
           onClick={() => {
-            window.location.href =
-              "https://9603692170315a.gumroad.com/l/aiovez";
+            // window.location.href =
+            //   "https://9603692170315a.gumroad.com/l/aiovez";
+
+            navigate("/waitlist");
           }}
           className="rounded-full cursor-pointer hidden lg:block"
         >
-          Pre-Order Now
+          Join Waitlist
         </Button>
         <Button
           variant={"outline"}

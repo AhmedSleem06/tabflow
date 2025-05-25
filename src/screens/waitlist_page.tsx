@@ -18,20 +18,20 @@ function WaitListPage() {
       <Toaster position="top-center" reverseOrder={false} />
       <Logo />
       <section className="flex mt-5 h-screen flex-col items-center justify-center">
-        <h1 className="text-4xl font-bold text-center">
+        <h1 className="text-3xl lg:text-4xl font-bold text-center">
           Instantly Organize and Save Your
           <span className="text-primary">
             {" "}
             Chrome Tabs <br /> with One Click
           </span>
         </h1>
-        <h4 className="mt-3 text-muted-foreground font-medium text-center">
+        <h4 className="mt-3 text-muted-foreground text-sm lg:text-base  font-medium text-center">
           Join hundreds of users waiting for the ultimate Chrome extension to
           <br></br>
           automatically organize your tabs into smart groups, save sessions, and
           boost your productivity.
         </h4>
-        <div className="mt-6 w-fit p-4 bg-white rounded-lg shadow-xl">
+        <div className="mt-6 w-fit py-4 px-6 bg-white rounded-lg shadow-xl">
           <section className="flex gap-3">
             <Input
               type="email"
