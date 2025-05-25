@@ -7,6 +7,8 @@ import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import * as EmailValidator from "email-validator";
 
+// update for deployment on vercel
+
 function WaitListPage() {
   const [email, setEmail] = useState("");
   const [buttonLoading, setButtonLoading] = useState(false);
