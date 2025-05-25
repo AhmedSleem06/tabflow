@@ -903,7 +903,7 @@ function NavLinks() {
 
 export function Logo() {
   return (
-    <a href="/tabflow" className="flex cursor-pointer w-fit items-center  gap-1 ">
+    <a href="/" className="flex cursor-pointer w-fit items-center  gap-1 ">
       <img src="./icon.png" alt="Logo" className="lg:w-11 w-9 h-9 lg:h-11" />
       <h1 className="text-lg lg:text-xl font-bold">TabFlow</h1>
     </a>
