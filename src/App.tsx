@@ -7,7 +7,7 @@ import WaitListPage from "./screens/waitlist_page";
 
 function App() {
   return (
-    <BrowserRouter basename="/tabflow">
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
